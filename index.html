@@ -277,24 +277,16 @@
   </div>
 
   <div class="ux-card">
-    <div class="card-title">📍 방문 일정 및 오시는 길</div>
+    <div class="card-title">📍 행사 안내</div>
     <div class="ux-inner-box">
-      <div class="state-group">
-        <div class="state-title">일정 및 기한</div>
+      <div class="state-group" style="margin-bottom: 0;">
         <ul class="state-list">
-          <li>방문 기간 : 5월 1일(금) — 3일(일)</li>
-          <li>형태 : 인스타그램 Reels</li>
-          <li>업로드 기한 : 방문 후 3-4일 이내 (기간 준수 필수)</li>
+          <li>일정: 5월 1일(금) — 3일(일)</li>
+          <li>방문 가능 시간: 10:00 – 17:00 (프라이빗 일정)</li>
+          <li>콘텐츠 타입: Reels</li>
+          <li>업로드 기간: 방문 후 3-4일 내 업로드 필수</li>
         </ul>
-      </div>
-      <div class="state-group">
-        <div class="state-title">장소 안내</div>
-        <ul class="state-list">
-          <li>주소 : 서울 성동구 성수동 1가 668-56</li>
-          <li>서울숲역 5번 출구 (도보 6분)</li>
-          <li>뚝섬역 8번 출구 (도보 7분)</li>
-          <li>주차 : 추후 안내 예정</li>
-        </ul>
+        <div style="font-size: 13px; color: #C27267; font-weight: 500; padding-left: 28px; margin-top: 8px;">*기간 미준수 시 추후 협업에 불이익</div>
       </div>
     </div>
   </div>
@@ -410,7 +402,7 @@
 
       <div class="notice">
         <span>⚠️</span>
-        <div>공동작업자 설정 및 콘텐츠 2차 활용에 동의해주셔야 정상적인 진행이 가능합니다.</div>
+        <div>공동작업자 설정 및 콘텐츠 2차 활용 동의</div>
       </div>
 
     </div>
@@ -444,6 +436,36 @@
     </div>
   </div>
 
+  <div class="ux-card" style="margin-bottom: 0;">
+    <div class="card-title">📍 오시는 길 (장소 안내)</div>
+    <div class="ux-inner-box">
+      <img src="images/장소.PNG" alt="장소 약도" style="display: block; width: 100%; max-width: 280px; margin: 0 auto 16px auto; border-radius: 8px; border: 1px solid #F1D6D2;">
+      <div class="state-group" style="margin-bottom: 0;">
+        <ul class="state-list">
+          <li>주소 : 서울 성동구 성수동 1가 668-56</li>
+          <li>서울숲역 5번 출구 (도보 6분)</li>
+          <li>뚝섬역 8번 출구 (도보 7분)</li>
+          <li>주차 : 추후 안내 예정</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.copy-pill').forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        // 아이콘 등 불필요한 특수문자를 제거하고 텍스트만 추출
+        var textToCopy = this.innerText.replace('❐', '').trim();
+        
+        // 클립보드 복사 API 호출
+        navigator.clipboard.writeText(textToCopy).then(function() {
+          alert(textToCopy + " 복사 완료! ✨");
+        }).catch(function(err) {
+          alert("복사에 실패했습니다. 직접 선택해서 복사해주세요!");
+        });
+      });
+    });
+  </script>
 </div>
 </body>
 </html>
