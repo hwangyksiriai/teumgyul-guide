@@ -33,7 +33,7 @@
       flex-direction: column;
       align-items: center;
       padding-top: 40px;
-      padding-bottom: 60px; /* 고정 높이 대신 하단 패딩 적용 */
+      padding-bottom: 60px;
       box-shadow: 0 4px 12px rgba(231, 131, 119, 0.06);
     }
     .banner-top {
@@ -49,7 +49,8 @@
     .banner-text {
       text-align: center;
       margin-top: 25px;
-      z-index: 2;
+      z-index: 3;
+      position: relative;
     }
     .banner-text h2 {
       font-size: 20px;
@@ -69,16 +70,16 @@
     }
     .bunny {
       position: absolute;
-      bottom: 25px; 
+      bottom: 30px;
       z-index: 2;
+      mix-blend-mode: multiply;
+      height: 205px;
     }
     .bunny-left {
-      left: 10%;
-      height: 170px;
+      left: 15px;
     }
     .bunny-right {
-      right: 10%;
-      height: 180px;
+      right: 15px;
     }
     .banner-floor {
       position: absolute;
@@ -247,7 +248,9 @@
 
     @media (max-width: 480px) {
       .hero-banner { padding-top: 30px; padding-bottom: 50px; }
-      .bunny-right { right: 0%; height: 140px; }
+      .bunny { height: 160px; bottom: 30px; }
+      .bunny-left { left: 10px; }
+      .bunny-right { right: 10px; }
       .banner-logo { height: 28px; }
       .banner-text { margin-top: 15px; }
       .banner-text h2 { font-size: 16px; }
@@ -268,16 +271,18 @@
     </div>
     
     <div class="banner-text">
-      <span class="tag">PRIVATE INVITATION</span>
+      <span class="tag">GUIDELINE</span>
       <h2>누구보다 먼저,<br>틈결의 첫 문이 열립니다.</h2>
       <p>정식 오픈 전 3일간, 선별된 크리에이터만을 위한 프라이빗 일정.<br>에스더버니의 세계관이 5개 층으로 펼쳐지는 공간을<br>누구보다 빠르게 콘텐츠로 담아보세요.</p>
     </div>
 
+    <img src="images/버니1.png" class="bunny bunny-left" alt="">
+    <img src="images/버니2.png" class="bunny bunny-right" alt="">
     <div class="banner-floor"></div>
   </div>
 
   <div class="ux-card">
-    <div class="card-title">📍 행사 안내</div>
+    <div class="card-title">🗓️ 행사 안내</div>
     <div class="ux-inner-box">
       <div class="state-group" style="margin-bottom: 0;">
         <ul class="state-list">
