@@ -195,7 +195,7 @@
     .floor-grid {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 16px;
     }
     .slider-container {
       display: flex;
@@ -218,15 +218,71 @@
       scroll-snap-align: center;
       border: 1px solid #F1D6D2;
     }
-    .floor-item {
+
+    /* Rich floor card */
+    .floor-card {
       background: #FFFFFF;
-      border-radius: 8px;
-      padding: 14px 16px;
+      border-radius: 12px;
       border: 1px solid #F1D6D2;
+      overflow: hidden;
     }
-    .floor-item h4 { font-size: 13px; font-weight: 700; color: #3B3433; margin-bottom: 2px; }
-    .floor-item h4 span { color: #E78377; margin-right: 6px; font-size: 11px; }
-    .floor-item p { font-size: 12px; color: #8C7F7D; font-weight: 500; margin-top:4px; }
+    .floor-card-imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .floor-card-imgs img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+    .floor-card-body {
+      padding: 14px 16px 16px;
+    }
+    .floor-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .floor-badge {
+      background: #E78377;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+    .floor-card-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: #3B3433;
+    }
+    .floor-card-desc {
+      font-size: 12px;
+      color: #8C7F7D;
+      font-weight: 500;
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+    .floor-shoot-tip {
+      background: #FFF8F7;
+      border: 1px solid #FDECEC;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #594D4C;
+      line-height: 1.55;
+      display: flex;
+      gap: 6px;
+    }
+    .floor-shoot-tip .tip-icon {
+      flex-shrink: 0;
+      font-size: 13px;
+    }
 
     .notice {
       background: #FFF1EE;
@@ -289,7 +345,7 @@
           <li>일정: 5월 1일(금) — 3일(일)</li>
           <li>방문 가능 시간: 10:00 – 17:00</li>
           <li>콘텐츠 타입: Reels</li>
-          <li>업로드 기간: 방문 후 3-4일 내 업로드 필수</li>
+          <li>업로드 기간: <strong style="color: #E78377;">방문 후 3-4일 내 업로드 필수 ⚠️</strong></li>
         </ul>
         <div style="font-size: 13px; color: #C27267; font-weight: 500; padding-left: 28px; margin-top: 8px;">*기간 미준수 시 추후 협업에 불이익</div>
         <div style="display: flex; gap: 6px; flex-wrap: wrap; padding-left: 28px; margin-top: 12px;">
@@ -304,33 +360,98 @@
   <div class="ux-card">
     <div class="card-title">🏢 공간 구성</div>
     <div class="ux-inner-box">
-      <div class="slider-container">
-        <img src="images/5층.png.PNG" alt="전경">
-        <img src="images/공간1.png.PNG" alt="공간 1">
-        <img src="images/공간2.png.PNG" alt="공간 2">
-        <img src="images/공간3.png.PNG" alt="공간 3">
-      </div>
       <div class="floor-grid">
-        <div class="floor-item">
-          <h4><span>B1F</span>Sketch Atelier</h4>
-          <p>에스더버니 아카이브 아트워크 전시 + 봉제인형 포토존</p>
+
+        <div class="floor-card">
+          <div class="floor-card-imgs">
+            <img src="images/B1F(1).png" alt="B1F 1">
+            <img src="images/B1F(2).png" alt="B1F 2">
+          </div>
+          <div class="floor-card-body">
+            <div class="floor-card-header">
+              <span class="floor-badge">B1F</span>
+              <span class="floor-card-name">Sketch Atelier</span>
+            </div>
+            <p class="floor-card-desc">에스더버니 작품을 가장 많이 만날 수 있는 공간. 아트워크 전시, 포토존과 함께 최초 출시 태닝버니 봉제인형 & 한정판 굿즈 판매존까지 — 아카이브와 쇼핑이 한 곳에.</p>
+            <div class="floor-shoot-tip">
+              <span class="tip-icon">📷</span>
+              <span>아트워크를 배경으로 인물 미디엄샷 / 봉제인형과 함께 클로즈업 컷 추천. 자연스러운 갤러리 무드로 촬영해요.</span>
+            </div>
+          </div>
         </div>
-        <div class="floor-item">
-          <h4><span>1F</span>틈결 Atelier</h4>
-          <p>태닝버니 봉제인형 등 한정판 킬러 상품 쇼핑</p>
+
+        <div class="floor-card">
+          <div class="floor-card-imgs">
+            <img src="images/1F (1).png" alt="1F 1">
+            <img src="images/1F (2).png" alt="1F 2">
+          </div>
+          <div class="floor-card-body">
+            <div class="floor-card-header">
+              <span class="floor-badge">1F</span>
+              <span class="floor-card-name">틈결 Atelier</span>
+            </div>
+            <p class="floor-card-desc">태닝버니 봉제인형 등 한정판 킬러 상품 쇼핑</p>
+            <div class="floor-shoot-tip">
+              <span class="tip-icon">📷</span>
+              <span>한정판 태닝버니를 손에 들고 언박싱 스타일로 촬영하거나, 쇼핑백과 함께 입구 컷을 담아보세요. 상품 디테일 클로즈업도 꼭 추천해요.</span>
+            </div>
+          </div>
         </div>
-        <div class="floor-item">
-          <h4><span>2F</span>Fashion Atelier</h4>
-          <p>패션 협업 의류·가방 + 인터랙티브 체험</p>
+
+        <div class="floor-card">
+          <div class="floor-card-imgs">
+            <img src="images/2F (1).png" alt="2F 1">
+            <img src="images/2F (2).png" alt="2F 2">
+          </div>
+          <div class="floor-card-body">
+            <div class="floor-card-header">
+              <span class="floor-badge">2F</span>
+              <span class="floor-card-name">Fashion Atelier</span>
+            </div>
+            <p class="floor-card-desc">패션 협업 의류·가방 + 인터랙티브 체험</p>
+            <div class="floor-shoot-tip">
+              <span class="tip-icon">📷</span>
+              <span>협업 의류 직접 착용 후 피팅룸·미러샷 / 가방 클로즈업 디테일컷. 콜라보 제품 실착 리뷰에 가장 최적화된 공간이에요.</span>
+            </div>
+          </div>
         </div>
-        <div class="floor-item">
-          <h4><span>3F</span>Wonder Atelier</h4>
-          <p>에스더버니 세계관 몰입형 포토존</p>
+
+        <div class="floor-card">
+          <div class="floor-card-imgs">
+            <img src="images/3F (1).PNG" alt="3F 1">
+            <img src="images/3F (2).PNG" alt="3F 2">
+          </div>
+          <div class="floor-card-body">
+            <div class="floor-card-header">
+              <span class="floor-badge">3F</span>
+              <span class="floor-card-name">Wonder Atelier</span>
+            </div>
+            <p class="floor-card-desc">에스더버니 세계관 몰입형 포토존</p>
+            <div class="floor-shoot-tip">
+              <span class="tip-icon">📷</span>
+              <span>포토존 정중앙에서 세계관 배경 풀샷 / 이동 동선을 영상으로 담아 공간감 전달. 조명이 좋아 인물컷도 예쁘게 나와요.</span>
+            </div>
+          </div>
         </div>
-        <div class="floor-item">
-          <h4><span>Rooftop</span>루프탑</h4>
-          <p>서울숲 위로 떠오르는 버니 애드벌룬 연출</p>
+
+        <div class="floor-card">
+          <div class="floor-card-imgs">
+            <img src="images/Roof (1).PNG" alt="Rooftop 1">
+            <img src="images/Roof (2).png" alt="Rooftop 2">
+          </div>
+          <div class="floor-card-body">
+            <div class="floor-card-header">
+              <span class="floor-badge">Rooftop</span>
+              <span class="floor-card-name">루프탑</span>
+            </div>
+            <p class="floor-card-desc">서울숲 위로 떠오르는 버니 애드벌룬 연출</p>
+            <div class="floor-shoot-tip">
+              <span class="tip-icon">📷</span>
+              <span>애드벌룬과 서울숲 뷰를 함께 담기 / 골든아워 타이밍을 노려 분위기 있는 컷 완성.</span>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -387,12 +508,6 @@
         <div class="state-title"><span class="state-icon icon-num">1</span>공동 작업자 연결</div>
         <div class="pill-container">
           <div class="copy-pill">@TeumGyul<span class="copy-icon">❐</span></div>
-        </div>
-      </div>
-
-      <div class="state-group">
-        <div class="state-title"><span class="state-icon icon-num">2</span>본문 내 계정 태그</div>
-        <div class="pill-container">
           <div class="copy-pill">@estherbunny.kr<span class="copy-icon">❐</span></div>
           <div class="copy-pill">@asif_calie<span class="copy-icon">❐</span></div>
           <div class="copy-pill">@78under_official<span class="copy-icon">❐</span></div>
@@ -400,7 +515,7 @@
       </div>
 
       <div class="state-group">
-        <div class="state-title"><span class="state-icon icon-num">3</span>필수 해시태그</div>
+        <div class="state-title"><span class="state-icon icon-num">2</span>필수 해시태그</div>
         <div class="pill-container">
           <div class="copy-pill">#에스더버니</div>
           <div class="copy-pill">#에스더버니성수아뜰리에</div>
