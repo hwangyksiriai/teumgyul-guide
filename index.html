@@ -3,304 +3,481 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>틈결 × 에스더버니 — 콘텐츠 가이드라인</title>
+  <title>틈결 × 에스더버니 — 방문형 가이드라인</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown: #7B3F2B;
+      --brown-light: #A0522D;
+      --brown-pale: #C4845A;
+      --cream: #FAF6F1;
+      --warm-white: #FDF9F5;
+      --text-dark: #2C1810;
+      --text-mid: #5C3D2E;
+      --text-light: #9B7260;
+      --border: #E8D5C4;
+      --tag-bg: #F2E8DF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
-      background: #FDF9F8; /* 살짝 연분홍 섞인 베이지 바탕 */
-      color: #3B3433;
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    /* HERO */
+    .hero {
+      background-color: var(--brown);
+      color: white;
+      padding: 72px 40px 60px;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      font-weight: 500;
+      color: var(--brown-pale);
+      border: 1px solid var(--brown-pale);
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .hero h1 span { color: var(--brown-pale); }
+    .hero-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+      margin-top: 6px;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 48px 28px;
+      border-bottom: 1px solid var(--border);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .section:last-child { border-bottom: none; }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: var(--brown);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--brown);
+    }
+    .section-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    /* ABOUT */
+    .about-lead {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.8;
+    }
+    .about-grid { display: grid; gap: 14px; }
+    .about-item {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .about-item-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 6px;
+    }
+    .about-item-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* INFO BOX */
+    .info-box {
+      background: var(--brown);
+      color: white;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .info-box-title {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--brown-pale);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13.5px;
+      margin-bottom: 10px;
+    }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-key {
+      min-width: 70px;
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+    }
+    .info-val { color: white; font-weight: 500; line-height: 1.6; }
+    .info-val strong { color: #FFD9B8; }
+
+    /* WELCOME BOX */
+    .welcome-box {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .welcome-box strong { color: var(--text-dark); }
+
+    /* GIFT */
+    .gift-box {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .gift-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--brown);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .gift-items { display: flex; flex-wrap: wrap; gap: 8px; }
+    .gift-tag {
+      background: var(--brown);
+      color: white;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    .gift-note {
+      font-size: 11.5px;
+      color: var(--text-light);
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* FLOORS */
+    .floor-list { display: grid; gap: 14px; }
+    .floor-item {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .floor-imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .floor-imgs img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .floor-imgs-slide {
+      display: flex;
+      overflow-x: auto;
+      gap: 2px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .floor-imgs-slide::-webkit-scrollbar { display: none; }
+    .floor-imgs-slide img {
+      flex: 0 0 80%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      scroll-snap-align: start;
+    }
+    .floor-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--warm-white);
+    }
+    .floor-badge {
+      background: var(--brown);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+      min-width: 42px;
+      text-align: center;
+    }
+    .floor-badge.highlight { background: var(--brown-pale); }
+    .floor-name { font-size: 14px; font-weight: 700; color: var(--text-dark); }
+    .floor-stars { margin-left: auto; font-size: 12px; color: var(--brown-pale); white-space: nowrap; }
+    .floor-body { padding: 14px 20px 18px; background: white; }
+    .floor-desc {
+      font-size: 12.5px;
+      color: var(--text-mid);
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+    .floor-tip {
+      background: var(--tag-bg);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--brown);
       line-height: 1.6;
-      min-height: 100vh;
     }
+    .floor-tip::before { content: '📷 '; }
 
-    .page { 
-      max-width: 600px; 
-      margin: 0 auto; 
-      padding: 2rem 1rem 4rem; 
+    /* BRAND */
+    .brand-list { display: grid; gap: 14px; }
+    .brand-item {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
     }
+    .brand-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+    .brand-name { font-size: 14px; font-weight: 700; color: var(--text-dark); }
+    .brand-type {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--brown);
+      background: var(--tag-bg);
+      padding: 3px 8px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .brand-handle { font-size: 11px; color: var(--text-light); margin-left: auto; }
+    .brand-desc { font-size: 12.5px; color: var(--text-mid); line-height: 1.7; }
 
+    /* CONTENT GUIDE */
+    .must-list { display: grid; gap: 10px; margin-bottom: 24px; }
+    .must-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .must-icon { font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+    .must-item strong { color: var(--text-dark); }
+
+    .ban-list {
+      background: #FFF5F0;
+      border: 1px solid #F4C5AE;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+    .ban-title { font-size: 12px; font-weight: 700; color: #C0391B; margin-bottom: 12px; letter-spacing: 0.05em; }
+    .ban-item { font-size: 12.5px; color: #7A3020; padding: 5px 0; border-bottom: 1px solid #F4C5AE; line-height: 1.6; }
+    .ban-item:last-child { border-bottom: none; }
+
+    .rec-list {
+      background: #F0F7F0;
+      border: 1px solid #B8D9B8;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .rec-title { font-size: 12px; font-weight: 700; color: #2E6B2E; margin-bottom: 12px; }
+    .rec-item { font-size: 12.5px; color: #2E5030; padding: 5px 0; border-bottom: 1px solid #B8D9B8; line-height: 1.6; }
+    .rec-item:last-child { border-bottom: none; }
+
+    /* HASHTAG */
+    .hashtag-section { margin-top: 20px; }
+    .hashtag-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-mid);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hashtag-label .required { background: var(--brown); color: white; font-size: 10px; padding: 2px 7px; border-radius: 10px; }
+    .hashtag-label .optional { background: var(--tag-bg); color: var(--brown); font-size: 10px; padding: 2px 7px; border-radius: 10px; }
+    .hashtag-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .hashtag { font-size: 13px; padding: 7px 14px; border-radius: 20px; font-weight: 500; }
+    .hashtag.req { background: var(--brown); color: white; }
+    .hashtag.opt { background: var(--tag-bg); color: var(--brown); border: 1px solid var(--border); }
+
+    /* COLLAB ACCOUNTS */
+    .collab-box {
+      background: var(--brown);
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+    .collab-title {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--brown-pale);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .collab-account { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .collab-account:last-child { border-bottom: none; }
+    .collab-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brown-pale); flex-shrink: 0; }
+    .collab-handle { font-size: 13.5px; color: white; font-weight: 500; }
+    .collab-note { margin-left: auto; font-size: 10px; color: rgba(255,255,255,0.45); }
+
+    /* WARNING */
+    .warning-box {
+      background: #FFFBF0;
+      border: 1px solid #F0D080;
+      border-radius: 12px;
+      padding: 16px 18px;
+      font-size: 12.5px;
+      color: #7A5A00;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+    .warning-box strong { color: #5A3D00; }
+
+    /* DEADLINE */
+    .deadline-box {
+      background: var(--brown);
+      color: white;
+      border-radius: 14px;
+      padding: 24px;
+      margin-top: 24px;
+    }
+    .deadline-num {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--brown-pale);
+      margin-bottom: 4px;
+    }
+    .deadline-unit { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 14px; }
+    .deadline-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .deadline-desc strong { color: #FFD9B8; }
+
+    /* LOCATION */
+    .location-box {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .location-row { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .location-row:last-child { border-bottom: none; }
+    .location-key { min-width: 60px; color: var(--text-light); font-size: 12px; font-weight: 500; }
+    .location-val { color: var(--text-dark); line-height: 1.6; }
+
+    /* FOOTER */
+    .footer {
+      background: var(--brown);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 36px 32px;
+      font-size: 11.5px;
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+    }
+    .footer strong { color: rgba(255,255,255,0.8); }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: var(--border); margin: 24px 0; }
+    .note-small { font-size: 11.5px; color: var(--text-light); margin-top: 10px; line-height: 1.6; }
+
+    /* ORIGINAL BANNER */
+    .page { max-width: 640px; margin: 0 auto; padding: 2rem 1rem 0; }
     .hero-banner {
       position: relative;
       width: 100%;
-      background: #FDF9F8;
+      background: #FDF9F5;
       border-radius: 16px;
       overflow: hidden;
       margin-bottom: 2rem;
-      border: 1px solid #F1D6D2;
+      border: 1px solid #E8D5C4;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding-top: 40px;
       padding-bottom: 60px;
-      box-shadow: 0 4px 12px rgba(231, 131, 119, 0.06);
+      box-shadow: 0 4px 12px rgba(123, 63, 43, 0.06);
     }
-    .banner-top {
-      position: relative;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-    .banner-logo {
-      height: 38px;
-      z-index: 2;
-    }
-    .banner-text {
-      text-align: center;
-      margin-top: 25px;
-      z-index: 3;
-      position: relative;
-    }
+    .banner-top { position: relative; width: 100%; display: flex; justify-content: center; }
+    .banner-logo { height: 38px; z-index: 2; }
+    .banner-text { text-align: center; margin-top: 25px; z-index: 3; position: relative; }
     .banner-text h2 {
-      font-size: 20px;
-      font-weight: 800;
-      color: #E78377;
-      margin-bottom: 8px;
-      line-height: 1.4;
-      letter-spacing: -0.5px;
+      font-size: 20px; font-weight: 800; color: #7B3F2B;
+      margin-bottom: 8px; line-height: 1.4; letter-spacing: -0.5px;
     }
-    .banner-text p {
-      font-size: 11px;
-      color: #8C7F7D;
-      line-height: 1.6;
+    .banner-text p { font-size: 11px; color: #9B7260; line-height: 1.6; }
+    .hero-banner .tag {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
+      padding: 5px 10px; border-radius: 6px; background: #F2E8DF; color: #7B3F2B;
+      border: 1px solid #E8D5C4; margin-bottom: 12px;
     }
-    .hero-banner .tag { 
-      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; padding: 5px 10px; border-radius: 6px; background: #FFF1EE; color: #E78377; border: 1px solid #F1D6D2; margin-bottom: 12px; 
-    }
-    .bunny {
-      position: absolute;
-      bottom: 30px;
-      z-index: 2;
-      mix-blend-mode: multiply;
-      height: 205px;
-    }
-    .bunny-left {
-      left: 15px;
-    }
-    .bunny-right {
-      right: 15px;
-    }
+    .bunny { position: absolute; bottom: 30px; z-index: 2; mix-blend-mode: multiply; height: 205px; }
+    .bunny-left { left: 15px; }
+    .bunny-right { right: 15px; }
     .banner-floor {
-      position: absolute;
-      bottom: 0; left: 0; width: 100%; height: 30px;
-      background: #E78377;
-      opacity: 0.15;
-      z-index: 1;
+      position: absolute; bottom: 0; left: 0; width: 100%; height: 30px;
+      background: #7B3F2B; opacity: 0.12; z-index: 1;
     }
-
-    /* Target User Card Styles */
-    .ux-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 24px 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(231, 131, 119, 0.06);
-      border: 1px solid #FDF0EE;
-    }
-    .card-title {
-      font-size: 16px;
-      font-weight: 800;
-      color: #E78377;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .ux-inner-box {
-      background: #FFF8F7; /* 아주 연한 베이지/핑크 이너 박스 */
-      border-radius: 12px;
-      padding: 20px;
-      border: 1px solid #FDECEC;
-    }
-
-    /* Inner box states (check, cross, thumb) */
-    .state-group {
-      margin-bottom: 24px;
-    }
-    .state-group:last-child { margin-bottom: 0; }
-    .state-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #3B3433;
-      margin-bottom: 10px;
-    }
-    .state-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      font-size: 11px;
-      flex-shrink: 0;
-    }
-    .icon-req { background: #E78377; color: #fff; font-size: 12px; } /* 코랄색 배경에 흰 체크 */
-    .icon-pro { background: #EBE5E4; color: #8C7F7D; font-size: 12px; } /* 베이지 회색 */
-    .icon-rec { background: #FCDCDC; color: #C27267; font-size: 12px; } /* 진한 핑크 */
-    .icon-num { background: #fff; border: 1px solid #E78377; color: #E78377; width: 22px; height: 22px; font-weight: 700; font-size: 12px; }
-
-    .state-list {
-      list-style: none;
-      padding-left: 28px; /* indent to align with text */
-    }
-    .state-list li {
-      font-size: 13px;
-      color: #594D4C;
-      line-height: 1.6;
-      margin-bottom: 6px;
-      position: relative;
-    }
-    .state-list li::before {
-      content: "-";
-      position: absolute;
-      left: -12px;
-      color: #DBC4C1;
-    }
-
-    .state-para {
-      font-size: 13px;
-      color: #3B3433;
-      line-height: 1.6;
-      padding-left: 28px;
-    }
-
-    .pill-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding-left: 30px;
-      margin-top: 8px;
-    }
-    .copy-pill {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      background: #FFFFFF;
-      border: 1px solid #F1D6D2;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 600;
-      color: #594D4C;
-      cursor: pointer;
-    }
-    .copy-icon { opacity: 0.4; font-size: 11px; font-weight: 400; color: #E78377; }
-
-    /* For specific layout pieces */
-    .floor-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .slider-container {
-      display: flex;
-      overflow-x: auto;
-      gap: 12px;
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-    .slider-container::-webkit-scrollbar { height: 6px; }
-    .slider-container::-webkit-scrollbar-thumb { background: #F1D6D2; border-radius: 4px; }
-    .slider-container::-webkit-scrollbar-track { background: transparent; }
-
-    .slider-container img {
-      flex: 0 0 calc(85% - 12px);
-      height: 260px;
-      border-radius: 8px;
-      object-fit: cover;
-      scroll-snap-align: center;
-      border: 1px solid #F1D6D2;
-    }
-
-    /* Rich floor card */
-    .floor-card {
-      background: #FFFFFF;
-      border-radius: 12px;
-      border: 1px solid #F1D6D2;
-      overflow: hidden;
-    }
-    .floor-card-imgs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-    }
-    .floor-card-imgs img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      display: block;
-    }
-    .floor-card-body {
-      padding: 14px 16px 16px;
-    }
-    .floor-card-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-    .floor-badge {
-      background: #E78377;
-      color: #fff;
-      font-size: 10px;
-      font-weight: 800;
-      padding: 3px 8px;
-      border-radius: 20px;
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-    }
-    .floor-card-name {
-      font-size: 14px;
-      font-weight: 800;
-      color: #3B3433;
-    }
-    .floor-card-desc {
-      font-size: 12px;
-      color: #8C7F7D;
-      font-weight: 500;
-      line-height: 1.55;
-      margin-bottom: 10px;
-    }
-    .floor-shoot-tip {
-      background: #FFF8F7;
-      border: 1px solid #FDECEC;
-      border-radius: 8px;
-      padding: 10px 12px;
-      font-size: 12px;
-      color: #594D4C;
-      line-height: 1.55;
-      display: flex;
-      gap: 6px;
-    }
-    .floor-shoot-tip .tip-icon {
-      flex-shrink: 0;
-      font-size: 13px;
-    }
-
-    .notice {
-      background: #FFF1EE;
-      border-radius: 8px;
-      padding: 14px;
-      font-size: 13px;
-      font-weight: 500;
-      color: #C27267;
-      margin-top: 20px;
-      display: flex;
-      gap: 8px;
-      line-height: 1.5;
-    }
-
-    .ref-link {
-      display: block; font-size: 12px; color: #C27267; text-decoration: none; margin-bottom: 6px; word-break: break-all;
-    }
-    .ref-link:hover { text-decoration: underline; color: #E78377; }
 
     @media (max-width: 480px) {
       .hero-banner { padding-top: 30px; padding-bottom: 50px; }
@@ -311,286 +488,374 @@
       .banner-text { margin-top: 15px; }
       .banner-text h2 { font-size: 16px; }
       .banner-text p { font-size: 11px; margin-top: 6px; }
-      
-      .ux-card { padding: 20px 16px; }
-      .ux-inner-box { padding: 16px; }
-      .pill-container { padding-left: 28px; }
+      .section { padding: 40px 20px; }
+      .floor-imgs img { height: 110px; }
     }
   </style>
 </head>
 <body>
-<div class="page">
 
+<div class="page">
   <div class="hero-banner">
     <div class="banner-top">
       <img src="images/logo.png.jpg" alt="TEUMGYUL" class="banner-logo" style="mix-blend-mode: multiply;">
     </div>
-    
     <div class="banner-text">
-      <span class="tag">GUIDELINE</span>
+      <span class="tag">Influencer GUIDELINE</span>
       <h2>누구보다 먼저,<br>틈결의 첫 문이 열립니다.</h2>
       <p>정식 오픈 전 3일간,<br>선별된 크리에이터만을 위한 프라이빗 일정.<br>에스더버니의 세계관이 5개 층으로 펼쳐지는 공간을<br>누구보다 빠르게 콘텐츠로 담아보세요.</p>
     </div>
-
     <img src="images/버니1.png" class="bunny bunny-left" alt="">
     <img src="images/버니2.png" class="bunny bunny-right" alt="">
     <div class="banner-floor"></div>
   </div>
-
-  <div class="ux-card">
-    <div class="card-title">🗓️ 행사 안내</div>
-    <div class="ux-inner-box">
-      <div class="state-group" style="margin-bottom: 0;">
-        <ul class="state-list">
-          <li>일정: 5월 1일(금) — 3일(일)</li>
-          <li>방문 가능 시간: 10:00 – 17:00</li>
-          <li>콘텐츠 타입: Reels</li>
-          <li>업로드 기간: <strong style="color: #E78377;">방문 후 3-4일 내 업로드 필수 ⚠️</strong></li>
-        </ul>
-        <div style="font-size: 13px; color: #C27267; font-weight: 500; padding-left: 28px; margin-top: 8px;">*기간 미준수 시 추후 협업에 불이익</div>
-        <div style="display: flex; gap: 6px; flex-wrap: wrap; padding-left: 28px; margin-top: 12px;">
-          <span style="background: #FCF5F3; border: 1px solid #EAD8D5; padding: 3px 8px; border-radius: 20px; font-size: 10px; font-weight: 600; color: #8A7B72;">프라이빗 일정</span>
-          <span style="background: #FCF5F3; border: 1px solid #EAD8D5; padding: 3px 8px; border-radius: 20px; font-size: 10px; font-weight: 600; color: #8A7B72;">콜라보 최초 공개</span>
-          <span style="background: #FCF5F3; border: 1px solid #EAD8D5; padding: 3px 8px; border-radius: 20px; font-size: 10px; font-weight: 600; color: #8A7B72;">콘텐츠 촬영 최적화</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ux-card">
-    <div class="card-title">🏢 공간 구성</div>
-    <div class="ux-inner-box">
-      <div class="floor-grid">
-
-        <div class="floor-card">
-          <div class="floor-card-imgs">
-            <img src="images/B1F(1).png" alt="B1F 1">
-            <img src="images/B1F(2).png" alt="B1F 2">
-          </div>
-          <div class="floor-card-body">
-            <div class="floor-card-header">
-              <span class="floor-badge">B1F</span>
-              <span class="floor-card-name">Sketch Atelier</span>
-            </div>
-            <p class="floor-card-desc">에스더버니 작품을 가장 많이 만날 수 있는 공간. 아트워크 전시, 포토존과 함께 최초 출시 태닝버니 봉제인형 & 한정판 굿즈 판매존까지 — 아카이브와 쇼핑이 한 곳에.</p>
-            <div class="floor-shoot-tip">
-              <span class="tip-icon">📷</span>
-              <span>아트워크를 배경으로 인물 미디엄샷 / 봉제인형과 함께 클로즈업 컷 추천. 자연스러운 갤러리 무드로 촬영해요.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="floor-card">
-          <div class="floor-card-imgs">
-            <img src="images/1F (1).png" alt="1F 1">
-            <img src="images/1F (2).png" alt="1F 2">
-          </div>
-          <div class="floor-card-body">
-            <div class="floor-card-header">
-              <span class="floor-badge">1F</span>
-              <span class="floor-card-name">틈결 Atelier</span>
-            </div>
-            <p class="floor-card-desc">태닝버니 봉제인형 등 한정판 킬러 상품 쇼핑</p>
-            <div class="floor-shoot-tip">
-              <span class="tip-icon">📷</span>
-              <span>한정판 태닝버니를 손에 들고 언박싱 스타일로 촬영하거나, 쇼핑백과 함께 입구 컷을 담아보세요. 상품 디테일 클로즈업도 꼭 추천해요.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="floor-card">
-          <div class="floor-card-imgs">
-            <img src="images/2F (1).png" alt="2F 1">
-            <img src="images/2F (2).png" alt="2F 2">
-          </div>
-          <div class="floor-card-body">
-            <div class="floor-card-header">
-              <span class="floor-badge">2F</span>
-              <span class="floor-card-name">Fashion Atelier</span>
-            </div>
-            <p class="floor-card-desc">패션 협업 의류·가방 + 인터랙티브 체험</p>
-            <div class="floor-shoot-tip">
-              <span class="tip-icon">📷</span>
-              <span>협업 의류 직접 착용 후 피팅룸·미러샷 / 가방 클로즈업 디테일컷. 콜라보 제품 실착 리뷰에 가장 최적화된 공간이에요.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="floor-card">
-          <div class="floor-card-imgs">
-            <img src="images/3F (1).PNG" alt="3F 1">
-            <img src="images/3F (2).PNG" alt="3F 2">
-          </div>
-          <div class="floor-card-body">
-            <div class="floor-card-header">
-              <span class="floor-badge">3F</span>
-              <span class="floor-card-name">Wonder Atelier</span>
-            </div>
-            <p class="floor-card-desc">에스더버니 세계관 몰입형 포토존</p>
-            <div class="floor-shoot-tip">
-              <span class="tip-icon">📷</span>
-              <span>포토존 정중앙에서 세계관 배경 풀샷 / 이동 동선을 영상으로 담아 공간감 전달. 조명이 좋아 인물컷도 예쁘게 나와요.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="floor-card">
-          <div class="floor-card-imgs">
-            <img src="images/Roof (1).PNG" alt="Rooftop 1">
-            <img src="images/Roof (2).png" alt="Rooftop 2">
-          </div>
-          <div class="floor-card-body">
-            <div class="floor-card-header">
-              <span class="floor-badge">Rooftop</span>
-              <span class="floor-card-name">루프탑</span>
-            </div>
-            <p class="floor-card-desc">서울숲 위로 떠오르는 버니 애드벌룬 연출</p>
-            <div class="floor-shoot-tip">
-              <span class="tip-icon">📷</span>
-              <span>애드벌룬과 서울숲 뷰를 함께 담기 / 골든아워 타이밍을 노려 분위기 있는 컷 완성.</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="ux-card">
-    <div class="card-title">📷 이렇게 제작해 주세요</div>
-    <div class="ux-inner-box">
-      
-      <div class="state-group">
-        <div class="state-title"><span class="state-icon icon-req">✔</span>필수사항</div>
-        <div class="state-para">
-          <strong>[영상 내 포함 필수]</strong>
-        </div>
-        <ul class="state-list" style="margin-top: 6px; margin-bottom: 14px;">
-          <li>콜라보 브랜드에 대한 내용 소개</li>
-          <li>다양한 공간 노출</li>
-          <li>5월 4일부터 일반 관객 입장 가능하다는 점 안내</li>
-        </ul>
-        <div class="state-para">
-          <strong>[캡션 본문 포함 필수]</strong>
-        </div>
-        <ul class="state-list" style="margin-top: 6px;">
-          <li>틈결의 '첫번째' 플래그십 스토어라는 점</li>
-          <li>콜라보 브랜드 소개</li>
-        </ul>
-      </div>
-
-      <div class="state-group">
-        <div class="state-title"><span class="state-icon icon-pro">✖</span>금지사항</div>
-        <ul class="state-list">
-          <li>직원 및 타 고객의 얼굴 무단 촬영 및 노출 엄격히 금지</li>
-          <li>참석 일정 변경 시, 최소 2주 전 사전 고지 필수 (당일 노쇼 절대 금지)</li>
-        </ul>
-      </div>
-
-      <div class="state-group">
-        <div class="state-title"><span class="state-icon icon-rec">👍</span>추천사항</div>
-        <ul class="state-list">
-          <li>곳곳에 마련된 귀여운 포토존을 배경으로 한 자유로운 촬영</li>
-          <li>이번 시즌 출시되는 한정판 '태닝버니' 언급</li>
-          <li>콜라보레이션 제품 직접 실착 및 체험 리뷰</li>
-          <li>아시아 전역에서 모인 에스더버니 1,000여 종 언급 (국내 최대 규모)</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="ux-card">
-    <div class="card-title">📤 이렇게 업로드해 주세요</div>
-    <div class="ux-inner-box">
-      
-      <div class="state-group">
-        <div class="state-title"><span class="state-icon icon-num">1</span>공동 작업자 연결</div>
-        <div class="pill-container">
-          <div class="copy-pill">@TeumGyul<span class="copy-icon">❐</span></div>
-          <div class="copy-pill">@estherbunny.kr<span class="copy-icon">❐</span></div>
-          <div class="copy-pill">@asif_calie<span class="copy-icon">❐</span></div>
-          <div class="copy-pill">@78under_official<span class="copy-icon">❐</span></div>
-        </div>
-      </div>
-
-      <div class="state-group">
-        <div class="state-title"><span class="state-icon icon-num">2</span>필수 해시태그</div>
-        <div class="pill-container">
-          <div class="copy-pill">#에스더버니</div>
-          <div class="copy-pill">#에스더버니성수아뜰리에</div>
-          <div class="copy-pill">#틈결</div>
-          <div class="copy-pill">#asifcalie</div>
-          <div class="copy-pill">#seveneightunder</div>
-        </div>
-      </div>
-
-      <div class="notice">
-        <span>⚠️</span>
-        <div>공동작업자 설정 및 콘텐츠 2차 활용 동의</div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="ux-card">
-    <div class="card-title">💡 레퍼런스 영상 (콘텐츠 참고용)</div>
-    <div class="ux-inner-box">
-      <div class="state-group">
-        <div class="state-title" style="margin-bottom: 4px; font-size: 13px;">1. 팝업 소개 및 체험형 콘텐츠</div>
-        <div style="padding-left: 28px;">
-          <a class="ref-link" href="https://www.instagram.com/reel/DIjQGTvzMgn/" target="_blank">https://www.instagram.com/reel/DIjQGTvzMgn/</a>
-          <a class="ref-link" href="https://www.instagram.com/reel/DOCu2qkE-oE/" target="_blank">https://www.instagram.com/reel/DOCu2qkE-oE/</a>
-          <a class="ref-link" href="https://www.instagram.com/reel/DLmtdtvvhFD/" target="_blank">https://www.instagram.com/reel/DLmtdtvvhFD/</a>
-          <a class="ref-link" href="https://www.instagram.com/reel/DRyzd8TE7O0/" target="_blank">https://www.instagram.com/reel/DRyzd8TE7O0/</a>
-        </div>
-      </div>
-      <div class="state-group">
-        <div class="state-title" style="margin-bottom: 4px; font-size: 13px;">2. 각자의 개성이 드러나는 콘텐츠</div>
-        <div style="padding-left: 28px;">
-          <a class="ref-link" href="https://www.instagram.com/reel/DQCILRKDyWJ/" target="_blank">https://www.instagram.com/reel/DQCILRKDyWJ/</a>
-          <a class="ref-link" href="https://www.instagram.com/reels/DPdNnLikc9X/" target="_blank">https://www.instagram.com/reels/DPdNnLikc9X/</a>
-        </div>
-      </div>
-      <div class="state-group">
-        <div class="state-title" style="margin-bottom: 4px; font-size: 13px;">3. 콜라보 제품 실제 착용 중심 콘텐츠</div>
-        <div style="padding-left: 28px;">
-          <a class="ref-link" href="https://www.instagram.com/reels/DW0pRaKiXEW/" target="_blank">https://www.instagram.com/reels/DW0pRaKiXEW/</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ux-card" style="margin-bottom: 0;">
-    <div class="card-title">📍 오시는 길 (장소 안내)</div>
-    <div class="ux-inner-box">
-      <img src="images/장소.PNG" alt="장소 약도" style="display: block; width: 100%; max-width: 280px; margin: 0 auto 16px auto; border-radius: 8px; border: 1px solid #F1D6D2;">
-      <div class="state-group" style="margin-bottom: 0;">
-        <ul class="state-list">
-          <li>주소 : 서울 성동구 성수동 1가 668-56</li>
-          <li>서울숲역 5번 출구 (도보 6분)</li>
-          <li>뚝섬역 8번 출구 (도보 7분)</li>
-          <li>주차 : 추후 안내 예정</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.querySelectorAll('.copy-pill').forEach(function(pill) {
-      pill.addEventListener('click', function() {
-        // 아이콘 등 불필요한 특수문자를 제거하고 텍스트만 추출
-        var textToCopy = this.innerText.replace('❐', '').trim();
-        
-        // 클립보드 복사 API 호출
-        navigator.clipboard.writeText(textToCopy).then(function() {
-          alert(textToCopy + " 복사 완료! ✨");
-        }).catch(function(err) {
-          alert("복사에 실패했습니다. 직접 선택해서 복사해주세요!");
-        });
-      });
-    });
-  </script>
 </div>
+
+<!-- ABOUT TEUMGYUL -->
+<div class="section">
+  <div class="section-label">About Teumgyul</div>
+  <div class="section-title">틈결에 대하여</div>
+  <div class="about-lead">
+    틈결(TEUMGYUL)은 IP, 브랜드, 공간이 결합된<br><strong>경험형 라이프스타일 리테일 플랫폼</strong>입니다.
+  </div>
+  <div class="about-grid">
+    <div class="about-item">
+      <div class="about-item-title">6개월마다 새로운 시즌형 IP 큐레이션</div>
+      <div class="about-item-desc">상설 공간 안에서 매 6개월마다 새로운 IP가 큐레이션됩니다. 방문할 때마다 전혀 다른 브랜드 경험이 펼쳐집니다.</div>
+    </div>
+    <div class="about-item">
+      <div class="about-item-title">세상의 IP를 틈결만의 방식으로 재해석</div>
+      <div class="about-item-desc">캐릭터, 패션, 문화, 아트 등 다양한 IP를 틈결만의 감도로 재구성합니다.</div>
+    </div>
+    <div class="about-item">
+      <div class="about-item-title">경험 중심 리테일 구조</div>
+      <div class="about-item-desc">공간, 상품, 콘텐츠가 연결된 구조로 보고, 체험하고, 구매하는 경험이 자연스럽게 이어지는 리테일 구조입니다.</div>
+    </div>
+    <div class="about-item">
+      <div class="about-item-title">고감도 상품 큐레이션</div>
+      <div class="about-item-desc">단독 상품, 한정 상품, 협업 상품 등 폭넓은 고감도 상품 구성을 만나볼 수 있습니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 행사 안내 -->
+<div class="section">
+  <div class="section-label">Event Info</div>
+  <div class="section-title">행사 안내</div>
+  <div class="info-box">
+    <div class="info-box-title">Schedule</div>
+    <div class="info-row">
+      <div class="info-key">일정</div>
+      <div class="info-val">5월 1일(금) — 3일(일)</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">방문 시간</div>
+      <div class="info-val">12:00 – 19:00</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">콘텐츠</div>
+      <div class="info-val">릴스</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">업로드</div>
+      <div class="info-val">
+        <strong>방문 후 3–4일 내 업로드 필수 ⚠️</strong><br>
+        <span style="font-size:11px;color:rgba(255,255,255,0.5)">기간 미준수 시 추후 협업에 불이익</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 입장 안내 & 웰컴 기프트 -->
+<div class="section">
+  <div class="section-label">Welcome Gift</div>
+  <div class="section-title">입장 안내 & 웰컴 기프트</div>
+  <div class="welcome-box">
+    입장 시 <strong>QR 체크 후</strong> 지하 1층(B1 · Sketch Atelier)부터 관람을 시작해 주세요.<br>
+    지하 1층에서 웰컴 기프트를 수령하실 수 있습니다.
+  </div>
+  <div class="gift-box">
+    <div class="gift-title">기프트 구성</div>
+    <div class="gift-items">
+      <div class="gift-tag">OFFLOW 틴트 (랜덤)</div>
+      <div class="gift-tag">키링 또는 주얼리</div>
+      <div class="gift-tag">디저트</div>
+    </div>
+    <div class="gift-note">※ 기프트 구성은 당일 랜덤 지급되며, 구성품은 변동될 수 있습니다.</div>
+  </div>
+</div>
+
+<!-- 공간 구성 -->
+<div class="section">
+  <div class="section-label">Space Guide</div>
+  <div class="section-title">공간 구성 & 추천 촬영 스팟</div>
+  <div class="floor-list">
+
+    <div class="floor-item">
+      <div class="floor-imgs-slide">
+        <img src="images/B1F(1).png" alt="B1F 1">
+        <img src="images/B1F(2).png" alt="B1F 2">
+        <img src="images/B1F(3).png" alt="B1F 3">
+      </div>
+      <div class="floor-header">
+        <div class="floor-badge highlight">B1</div>
+        <div class="floor-name">Sketch Atelier</div>
+        <div class="floor-stars">⭐ 최우선 추천</div>
+      </div>
+      <div class="floor-body">
+        <div class="floor-desc">일본 Z세대 트렌드 1위, 헬로키티와 치이카와를 제친 아시아 최고의 화제 캐릭터 — 에스더버니의 아트워크를 국내 최대 규모로 단독 전시하는 공간이 바로 B1입니다. 시부야, 긴자를 열광시킨 그 세계관을 성수에서 누구보다 먼저 경험해 보세요.</div>
+        <div class="floor-desc" style="margin-top:8px;">에스더버니 아트워크 전시, 포토존과 함께 최초 출시 태닝버니 봉제인형 & 한정판 굿즈 판매존이 마련됩니다. 기프트 수령 장소이자 가장 중요한 콘텐츠 스팟입니다.</div>
+        <div class="floor-tip">아트워크를 배경으로 인물 미디엄샷 / 봉제인형과 함께 클로즈업 컷 추천. 자연스러운 갤러리 무드로 촬영해요.</div>
+      </div>
+    </div>
+
+    <div class="floor-item">
+      <div class="floor-imgs">
+        <img src="images/1F (1).png" alt="1F 1">
+        <img src="images/1F (2).png" alt="1F 2">
+      </div>
+      <div class="floor-header">
+        <div class="floor-badge highlight">1F</div>
+        <div class="floor-name">Seongsu Atelier (틈결 Atelier)</div>
+        <div class="floor-stars">⭐⭐⭐</div>
+      </div>
+      <div class="floor-body">
+        <div class="floor-desc">나만의 취향으로 좋아하는 것을 마주하고 고르며 나다움을 만들어가는 공간. 달항아리 등 한국적 요소와 PB 상품, 태닝버니 봉제인형 등 한정판 킬러 상품을 만나볼 수 있습니다.</div>
+        <div class="floor-tip">한정판 태닝버니를 손에 들고 언박싱 스타일로 촬영하거나, 쇼핑백과 함께 입구 컷을 담아보세요.</div>
+      </div>
+    </div>
+
+    <div class="floor-item">
+      <div class="floor-imgs">
+        <img src="images/2F (1).png" alt="2F 1">
+        <img src="images/2F (2).png" alt="2F 2">
+      </div>
+      <div class="floor-header">
+        <div class="floor-badge highlight">2F</div>
+        <div class="floor-name">Fashion Atelier</div>
+        <div class="floor-stars">⭐ 필수 촬영</div>
+      </div>
+      <div class="floor-body">
+        <div class="floor-desc">OFFLOW(오프로우) 패션·주얼리, 한국식 가구를 만나볼 수 있습니다. <strong>피팅룸이 준비되어 있으니 자유롭게 이용 및 촬영 가능합니다.</strong></div>
+        <div class="floor-tip">협업 의류 직접 착용 후 피팅룸·미러샷 / 가방 클로즈업 디테일컷. 콜라보 제품 실착 리뷰에 최적화된 공간이에요.</div>
+      </div>
+    </div>
+
+    <div class="floor-item">
+      <div class="floor-imgs">
+        <img src="images/3F (1).PNG" alt="3F 1">
+        <img src="images/3F (2).PNG" alt="3F 2">
+      </div>
+      <div class="floor-header">
+        <div class="floor-badge">3F</div>
+        <div class="floor-name">Wonder Atelier · Infinite Studio</div>
+        <div class="floor-stars">⭐⭐</div>
+      </div>
+      <div class="floor-body">
+        <div class="floor-desc">에스더버니 세계관 몰입형 포토존과 패션 제품을 만나볼 수 있습니다.</div>
+        <div class="floor-tip">포토존 정중앙에서 세계관 배경 풀샷 / 이동 동선을 영상으로 담아 공간감 전달.</div>
+      </div>
+    </div>
+
+    <div class="floor-item">
+      <div class="floor-imgs">
+        <img src="images/Roof (1).PNG" alt="Rooftop 1">
+        <img src="images/Roof (2).png" alt="Rooftop 2">
+      </div>
+      <div class="floor-header">
+        <div class="floor-badge highlight">Roof</div>
+        <div class="floor-name">Wonder Atelier · Dream Yard</div>
+        <div class="floor-stars">⭐ 강력 추천</div>
+      </div>
+      <div class="floor-body">
+        <div class="floor-desc">대형 케이크 & 케이터링(마이페이보릿쿠키)과 에스더버니 애드벌룬 연출이 예정되어 있습니다.</div>
+        <div class="floor-tip">애드벌룬과 서울숲 뷰를 함께 담기 / 골든아워 타이밍을 노려 분위기 있는 컷 완성.</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="warning-box">
+    ⚠️ <strong>외관 촬영도 추천드려요!</strong><br>
+    건물 외부에 에스더버니가 사람들을 내려다보는 설치물이 예정되어 있습니다. 꼭 담아주세요.
+  </div>
+</div>
+
+<!-- 콜라보 브랜드 -->
+<div class="section">
+  <div class="section-label">Collaboration</div>
+  <div class="section-title">콜라보 브랜드 소개</div>
+  <div class="brand-list">
+    <div class="brand-item">
+      <div class="brand-header">
+        <div class="brand-name">Esther Bunny (에스더버니)</div>
+        <div class="brand-type">메인 IP</div>
+        <div class="brand-handle">@estherbunny.kr</div>
+      </div>
+      <div class="brand-desc">아시아 전역에서 모인 에스더버니 1,000여 종(국내 최대 규모)을 만날 수 있으며, 공간 곳곳에서 에스더버니의 세계관이 펼쳐집니다.</div>
+    </div>
+    <div class="brand-item">
+      <div class="brand-header">
+        <div class="brand-name">as if calie (애즈이프캘리)</div>
+        <div class="brand-type">협업 브랜드</div>
+        <div class="brand-handle">@asif_calie</div>
+      </div>
+      <div class="brand-desc">틈결과 함께하는 협업 브랜드입니다.</div>
+    </div>
+    <div class="brand-item">
+      <div class="brand-header">
+        <div class="brand-name">SEVEN EIGHT UNDER (세븐에잇언더)</div>
+        <div class="brand-type">협업 브랜드</div>
+        <div class="brand-handle">@78under_official</div>
+      </div>
+      <div class="brand-desc">틈결과 함께하는 협업 브랜드입니다.</div>
+    </div>
+    <div class="brand-item">
+      <div class="brand-header">
+        <div class="brand-name">OFFLOW (오프로우)</div>
+        <div class="brand-type">입점 브랜드</div>
+        <div class="brand-handle">@offlow</div>
+      </div>
+      <div class="brand-desc">2층 Fashion Atelier에서 만나볼 수 있는 컨템포러리 패션 브랜드입니다.</div>
+    </div>
+    <div class="brand-item">
+      <div class="brand-header">
+        <div class="brand-name">My Favorite Cookie (마이페이보릿쿠키)</div>
+        <div class="brand-type">케이터링</div>
+        <div class="brand-handle">@my_favorite_cookie</div>
+      </div>
+      <div class="brand-desc">루프탑 케이터링을 담당하는 미국식 수제쿠키 전문 브랜드입니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 콘텐츠 가이드 -->
+<div class="section">
+  <div class="section-label">Content Guide</div>
+  <div class="section-title">콘텐츠 가이드</div>
+
+  <div style="font-size:12px;font-weight:700;color:var(--text-mid);margin-bottom:10px;">✔ 필수 사항</div>
+  <div class="must-list">
+    <div class="must-item">
+      <div class="must-icon">🎬</div>
+      <div><strong>[영상 내 포함 필수]</strong> 틈결 공간이 보이는 콘텐츠 / 콜라보 브랜드 소개 / 5월 4일부터 일반 관객 입장 가능하다는 점 안내</div>
+    </div>
+    <div class="must-item">
+      <div class="must-icon">✍️</div>
+      <div><strong>[캡션 필수 포함]</strong> 틈결의 '첫 번째' 플래그십 스토어라는 점 언급 / 콜라보 브랜드 소개 / 틈결 계정 태그</div>
+    </div>
+    <div class="must-item">
+      <div class="must-icon">🔗</div>
+      <div><strong>[공동작업자 설정]</strong> 틈결 공식 계정(@TeumGyul)만 설정해 주세요.</div>
+    </div>
+    <div class="must-item">
+      <div class="must-icon">📢</div>
+      <div><strong>[광고 표기]</strong> 공정거래위원회 규정에 따라 <strong>#광고</strong> 또는 <strong>#협찬</strong>을 캡션 앞부분에 반드시 포함해 주세요.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="ban-list">
+    <div class="ban-title">✖ 금지 사항</div>
+    <div class="ban-item">직원 및 타 고객의 얼굴 무단 촬영 및 노출 엄격히 금지</div>
+    <div class="ban-item">참석 일정 변경 시 최소 2주 전 사전 고지 필수 (당일 노쇼 절대 금지)</div>
+  </div>
+
+  <div class="rec-list">
+    <div class="rec-title">👍 추천 사항</div>
+    <div class="rec-item">곳곳에 마련된 에스더버니 포토존을 배경으로 한 자유로운 촬영</div>
+    <div class="rec-item">이번 시즌 출시되는 한정판 '태닝버니' 언급</div>
+    <div class="rec-item">콜라보레이션 제품 직접 실착 및 체험 리뷰</div>
+    <div class="rec-item">아시아 전역에서 모인 에스더버니 1,000여 종 언급 (국내 최대 규모)</div>
+    <div class="rec-item">스토리 업로드 시 틈결 태그 → 틈결 공식 계정 리그램 예정</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="hashtag-section">
+    <div class="hashtag-label">해시태그 <span class="required">필수</span></div>
+    <div class="hashtag-wrap">
+      <div class="hashtag req">#틈결</div>
+      <div class="hashtag req">#에스더버니</div>
+      <div class="hashtag req">#에스더버니성수아뜰리에</div>
+    </div>
+    <div class="hashtag-label">해시태그 <span class="optional">선택</span></div>
+    <div class="hashtag-wrap">
+      <div class="hashtag opt">#애즈이프캘리</div>
+      <div class="hashtag opt">#asifcalie</div>
+      <div class="hashtag opt">#세븐에잇언더</div>
+      <div class="hashtag opt">#seveneightunder</div>
+      <div class="hashtag opt">#오프로우</div>
+      <div class="hashtag opt">#마이페이보릿쿠키</div>
+    </div>
+  </div>
+
+  <!-- COLLAB ACCOUNTS -->
+  <div class="collab-box">
+    <div class="collab-title">공동작업자 연결</div>
+    <div class="collab-account">
+      <div class="collab-dot"></div>
+      <div class="collab-handle">@TeumGyul</div>
+      <div class="collab-note">필수</div>
+    </div>
+    <div class="collab-account">
+      <div class="collab-dot"></div>
+      <div class="collab-handle">@estherbunny.kr</div>
+      <div class="collab-note">선택</div>
+    </div>
+    <div class="collab-account">
+      <div class="collab-dot"></div>
+      <div class="collab-handle">@asif_calie</div>
+      <div class="collab-note">선택</div>
+    </div>
+    <div class="collab-account">
+      <div class="collab-dot"></div>
+      <div class="collab-handle">@78under_official</div>
+      <div class="collab-note">선택</div>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    ⚠️ 공동작업자 설정 및 콘텐츠 2차 활용에 동의하는 것으로 간주됩니다.<br>
+    행사 당일 프레스 촬영이 일부 진행될 수 있으며, 방문자가 촬영 콘텐츠에 포함될 수 있습니다.
+  </div>
+
+  <div class="deadline-box">
+    <div class="deadline-num">3–4</div>
+    <div class="deadline-unit">days</div>
+    <div class="deadline-desc">
+      방문 후 <strong>3–4일 이내</strong>에 업로드를 완료해 주세요.<br>
+      기간 미준수 시 추후 협업에 불이익이 발생할 수 있습니다.
+    </div>
+  </div>
+</div>
+
+<!-- 오시는 길 -->
+<div class="section">
+  <div class="section-label">Location</div>
+  <div class="section-title">오시는 길</div>
+  <div class="location-box">
+    <div class="location-row">
+      <div class="location-key">주소</div>
+      <div class="location-val">서울 성동구 성수동 1가 668-56</div>
+    </div>
+    <div class="location-row">
+      <div class="location-key">지하철</div>
+      <div class="location-val">서울숲역 5번 출구 (도보 6분)<br>뚝섬역 8번 출구 (도보 7분)</div>
+    </div>
+    <div class="location-row">
+      <div class="location-key">주차</div>
+      <div class="location-val">추후 안내 예정</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>TEUMGYUL × ESTHER BUNNY</strong><br>
+  본 가이드라인은 선별된 크리에이터에게만 제공되는 자료입니다.<br>
+  문의사항이 있으시면 담당자에게 연락해 주세요.
+</div>
+
 </body>
 </html>
